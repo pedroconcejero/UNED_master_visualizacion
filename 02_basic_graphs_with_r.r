@@ -32,20 +32,20 @@ boxplot(mtcars$litperkm ~ mtcars$cyl)
 # http://www.statmethods.net/graphs/scatterplot.html 
 
 # # Simple Scatterplot
-attach(mtcars)
 ?plot
-plot(tons, 
-     litperkm, 
+plot(mtcars$tons, 
+     mtcars$litperkm, 
      main = "Ejemplo gráfico de dispersión",
      xlab = "Peso del vehiculo (toneladas) ", 
      ylab = "Consumo (lit por km)", 
-     pch = 17)
+     pch = 10)
 
 
 # Incluimos regresion lineal y lowess
-abline(lm(litperkm ~ tons), 
+abline(lm(litperkm ~ tons, 
+          data = mtcars), 
        col="red") # regression line (y~x)
-lines(lowess(tons, litperkm), 
+lines(lowess(mtcars$tons, mtcars$litperkm), 
       col="blue") # lowess line (x,y)
 
 
@@ -79,22 +79,6 @@ pairs(~ litperkm + disp + drat + tons,
       main = "Matriz de graficos bivariantes")
 
 
-# El paquete lattice proporciona las opciones para condicionar la matriz de graficos en un factor
-
-# install.packages("lattice") ## no es necesario desde RSTudio
-library(lattice)
-?splom
-
-splom(mtcars[c("litperkm",
-               "disp",
-               "drat",
-               "tons")], 
-      groups = cyl, 
-      data = mtcars,
-      panel = panel.superpose,
-      auto.key = T)
-
-
 
 # Scatterplot Matrices from the car Package
 
@@ -104,26 +88,6 @@ scatterplotMatrix( ~ litperkm + disp + drat + tons | cyl,
                     data = mtcars,
                     main = "Matriz de grafs dispersion por n cilindros")
 
-
-# Scatterplot Matrices from the glus Package
-
-install.packages("gclus")
-library(gclus)
-dta <- mtcars[c("litperkm",
-                "disp",
-                "drat",
-                "tons")] # extraemos los datos de las columnas del dataset
-dta.r <- abs(cor(dta)) # calculamos correlaciones (valor absoluto)
-dta.col <- dmat.color(dta.r) # obtenemos colores mediante funcion dmat.color especifica
-
-# reordenamos variables de tal modo que las que tienen corr mas alta
-# esten mas cerca de la diagonal
-dta.o <- order.single(dta.r)
-cpairs(dta, 
-       dta.o, 
-       panel.colors = dta.col, 
-       gap = .5,
-       main = "Variables ordenadas y coloreadas por la correlacion" )
 
 
 # Cuando hay muchos puntos de datos y una superposicion significativa
@@ -137,6 +101,8 @@ install.packages("hexbin")
 library(hexbin)
 x <- rnorm(1000) # Generamos una distribucion normal de mil puntos, aleatoria
 y <- rnorm(1000) # Y otra mas
+plot(x, y)
+
 bin <- hexbin(x, y, xbins=50)
 plot(bin, main="Hexagonal Binning")
 
@@ -146,45 +112,21 @@ plot(bin, main="Hexagonal Binning")
 
 x <- rnorm(1000)
 y <- rnorm(1000)
+bin <- hexbin(x, y, xbins=50)
 plot(x, y, 
      main = "PDF Scatterplot Example", 
      col = rgb(0, 100, 0, 50, maxColorValue = 255), 
      pch=16)
 
 
-# Podemos crear graficos 3D aunque francamente no sean muy aconsejables asi en general
-# La libreria scatterplot3d permite hacerlo con mucha facilidad
-
-install.packages("scatterplot3d")
-library(scatterplot3d)
-attach(mtcars)
-scatterplot3d(tons, 
-              disp, 
-              litperkm, 
-              main = "3D Scatterplot")
-
-
-# 3D Scatterplot con plano de regresion
-library(scatterplot3d)
-attach(mtcars)
-s3d <- scatterplot3d(tons, 
-                     disp, 
-                     litperkm, 
-                     pch = 16, 
-                     highlight.3d = TRUE,
-                     type = "h", 
-                     main = "3D Scatterplot")
-fit <- lm(litperkm ~ tons + disp)  # Calculamos el plano de regresion
-s3d$plane3d(fit) # Lo adjuntamos al objeto de grafico bivariante
-
 # Grafico 3D interactivo con el paquete rgl
 
 install.packages("rgl")
 library(rgl)
 
-plot3d(tons, 
-       disp, 
-       litperkm, 
+plot3d(mtcars$tons, 
+       mtcars$disp, 
+       mtcars$litperkm, 
        col="red", 
        size=3)
 
@@ -193,8 +135,10 @@ plot3d(tons,
 
 #install.packages("Rcmdr")  # no es necesario desde dentro de RStudio
 #library(Rcmdr)
-attach(mtcars)
-scatter3d(wt, disp, mpg) 
+
+scatter3d(mtcars$wt, 
+          mtcars$disp, 
+          mtcars$mpg) 
 
 # Guardamos el objeto para futuro uso
 

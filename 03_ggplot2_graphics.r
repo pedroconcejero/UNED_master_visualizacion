@@ -37,11 +37,8 @@ qplot(x = tons,
 p <- ggplot(mtcars, aes(tons, litperkm)) 
 
 p + geom_point(aes(colour = cyl,
-                   shape = cyl)) +
+                   shape = cyl)) + 
   geom_smooth()
-
-
-
 
 
 
@@ -66,7 +63,8 @@ ggplot(mtcars,
   geom_hex(alpha = 1) +
   geom_smooth(method ="lm") +
   coord_cartesian() +
-  scale_color_gradient() +
+  scale_color_gradient(low = "darkblue",
+                       high = "lightblue") +
   theme_bw()
 
 # Histograma básico
@@ -76,24 +74,14 @@ ggplot(mtcars,
   geom_histogram()
 
 ggplot(mtcars, 
-       aes(litperkm, fill = cyl, 
-           alpha = 0.5)) +
-  geom_density()
-
-ggplot(mtcars, 
-       aes(litperkm, fill = cyl)) +
-  geom_histogram(binwidth = 1) +
-  geom_freqpoly()
-
-ggplot(mtcars, 
-       aes(litperkm, fill = cyl)) +
-  geom_histogram(binwidth = 1) +
-  geom_freqpoly(binwidth = 1)
-
-ggplot(mtcars, 
        aes(litperkm, fill = cyl)) +
   geom_histogram(binwidth = 1) +
   scale_fill_brewer(palette = "Reds")
+
+ggplot(mtcars, 
+       aes(litperkm, fill = cyl, 
+           alpha = 0.5)) +
+  geom_density()
 
 # Boxplot
 
@@ -109,7 +97,7 @@ p <- ggplot(mtcars,
   
 p + geom_boxplot() + 
   geom_jitter(width = 0.2) +
-  theme_gray()
+  theme_bw()
 
 glotones <- row.names(mtcars[mtcars$litperkm == max(mtcars$litperkm),])
 glotones
@@ -122,7 +110,7 @@ p + geom_boxplot() +
   geom_text(aes(label = row.names(mtcars)),
             hjust=0, 
             vjust=0,
-            size = 2) 
+            size = 4) 
 
 # Gráfico refinado
 
