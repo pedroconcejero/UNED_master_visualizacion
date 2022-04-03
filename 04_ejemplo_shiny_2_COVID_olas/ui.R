@@ -68,6 +68,25 @@ shinyUI(
                         )
                         
                       )
+             ),
+             tabPanel("Barplot",
+                      sidebarPanel(
+                        
+                        selectInput(inputId = 'y', 
+                                    'Elige variable para eje Y', 
+                                    choices = c("total_contagiados",
+                                                "total_hospitalizados",
+                                                "total_uci",
+                                                "total_fallecidos")),
+                      ),
+                      
+                      mainPanel(
+                        plotOutput(outputId = 'plot',
+                                   height = 800,
+                                   width = 900
+                        )
+                        
+                      )
              )
              
   
