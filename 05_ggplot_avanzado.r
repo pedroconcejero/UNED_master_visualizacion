@@ -1,9 +1,12 @@
 # ggplot avanzado
 # Extensiones de ggplot
-# Para Curso visualización avanzada master UCM
+# Para Curso visualización avanzada master UNED 2022
 
 # A partir de lista mantenida por RStudio:
 # https://exts.ggplot2.tidyverse.org/gallery/
+
+# Establece tu directorio de trabajo
+setwd("/home/pedro/Escritorio/UNED_2022/uned_master_big_data")
 
 # 1 gganimate
 
@@ -34,9 +37,9 @@ p <- ggplot(gapminder, aes(gdpPercap,
   transition_time(year) +
   ease_aes('linear')
 
-animate(p, renderer = file_renderer('./animation/'))
+animate(p, renderer = file_renderer(dir = paste0(getwd(),'/animation/')))
 
-animate(p, renderer = gifski_renderer(file = './animation/gif.gif'))
+animate(p, renderer = gifski_renderer(file = paste0(getwd(),'/gapminder_animation.gif')))
 
 # Conviene devolver el output de gráficos a consola (RStudio)
 
@@ -115,7 +118,6 @@ library(ggradar)
 
 library(dplyr)
 library(scales)
-library(tibble)
 
 mtcars_radar <- mtcars %>% 
   as_tibble(rownames = "group") %>% 
