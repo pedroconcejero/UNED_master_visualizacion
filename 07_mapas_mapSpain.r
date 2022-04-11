@@ -1,4 +1,4 @@
-# Master Big Data UCM -presencial 2022-
+# Master Big Data UNED 2022-
 # Script para probar librería mapSpain
 # Siguiendo la documentación del autor según nos lo explicó en R-madrid
 # https://github.com/dieghernan/rpubs
