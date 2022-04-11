@@ -3,7 +3,7 @@
 
 # asegúrate de cambiar tu directorio de trabajo (donde has descargado todo el repo.)
 
-setwd("/home/pedro/Escritorio/UCM_master/ucm_master_big_data")
+setwd("/home/pedro/Escritorio/UNED_2022/uned_master_big_data")
 
 # si no tienes instalado el paquete "sp" instálalo
 #install.packages("sp")
@@ -35,26 +35,14 @@ plot(andalucia)
 # Con cambios en escalas de color a partir de taller de color de grupo R madrid:
 # https://github.com/pedroconcejero/taller-color/blob/master/taller_color_def_grupo_madrid.rmd
 
-githubURL1 <- "https://github.com/pedroconcejero/taller-color/blob/master/tasas_paro_andalucia.rda?raw=true"
+githubURL1 <- "https://github.com/pedroconcejero/UNED_master_visualizacion/blob/main/tasas_paro_andalucia.rda?raw=true"
 
 load(url(githubURL1))
 
 str(tasa.paro.and.provincial)
-tasa.paro.and.provincial$gedad <- as.character(tasa.paro.and.provincial$gedad)
+
 table(tasa.paro.and.provincial$gedad)
 
-tasa.paro.and.provincial$gedad[tasa.paro.and.provincial$gedad == "De 16 a 34 a\xf1os"] <- "De 16 a 34 años"
-tasa.paro.and.provincial$gedad[tasa.paro.and.provincial$gedad == "De 35 a 54 a\xf1os"] <- "De 35 a 54 años"
-tasa.paro.and.provincial$gedad[tasa.paro.and.provincial$gedad == "Mayor de 55 a\xf1os"] <- "Mayor de 55 años"
-table(tasa.paro.and.provincial$gedad)
-
-tasa.paro.and.provincial$prov <- droplevels(tasa.paro.and.provincial$prov)
-levels(tasa.paro.and.provincial$prov)
-levels(tasa.paro.and.provincial$prov)[1] <- "Almería"
-levels(tasa.paro.and.provincial$prov)[2] <- "Cádiz"
-levels(tasa.paro.and.provincial$prov)[3] <- "Córdoba"
-levels(tasa.paro.and.provincial$prov)[6] <- "Jaén"
-levels(tasa.paro.and.provincial$prov)[7] <- "Málaga"
 levels(tasa.paro.and.provincial$prov)
 
 table(tasa.paro.and.provincial$prov)
