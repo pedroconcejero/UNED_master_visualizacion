@@ -1,5 +1,5 @@
 # Mapas con leaflet en R
-# para master big data UCM
+# para master big data UNED
 # visualización avanzada
 
 # Inspirado en:
@@ -10,32 +10,20 @@
 if (!"leaflet" %in% installed.packages()) install.packages("leaflet")
 library(leaflet)
 
-Markers
+# Markers
 
 # Use markers to call out points on the map. 
 # Marker locations are expressed in 
 # latitude/longitude coordinates, 
 # and can either appear as icons or as circles.
-# 40.4399710778972, -3.711730015993984
-
-# 40.43826448981861, -3.7014894850014946
+# 40.451487512414616, -3.737671385135911
 
 my_map <- leaflet() %>% 
   addTiles() %>%
-  addMarkers(lat=36.1848, lng=-5.49, 
-             popup="Population explosion")
+  addMarkers(lat=40.451487512414616, lng=-3.737671385135911, 
+             popup="Sede UNED")
 my_map
 
-42.93959602742515, -4.656910378676613
-
-
-42.93959602742515, -4.656910378676613
-
-my_map <- leaflet() %>% 
-  addTiles() %>%
-  addMarkers(lat=40.43826448981861, lng=-3.7014894850014946, 
-             popup="UCM big data")
-my_map
 
 # Mapas de España con Leaflet
 
@@ -50,9 +38,9 @@ long_andalucia <- -4.5000000
 # Mapa de España
 
 m <- leaflet() %>% 
-  setView(lat = 42.924561093572244,  
-          lng = -4.6809966156996285, 
-          zoom = 10)
+  setView(lat = lat_espania,  
+          lng = long_espania, 
+          zoom = 6)
 
 m %>% addTiles()
 
