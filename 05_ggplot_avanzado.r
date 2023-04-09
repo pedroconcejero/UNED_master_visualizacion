@@ -6,7 +6,7 @@
 # https://exts.ggplot2.tidyverse.org/gallery/
 
 # Establece tu directorio de trabajo
-setwd("/home/pedro/Escritorio/UNED_2022/uned_master_big_data")
+setwd("/home/pedro/Escritorio/UNED_2023/UNED_master_visualizacion-main")
 
 # 1 gganimate
 
@@ -119,14 +119,19 @@ library(ggradar)
 library(dplyr)
 library(scales)
 
+# Gráfico básico. 
+# Más opciones en
+# https://r-charts.com/es/ranking/ggradar/
+
+
 mtcars_radar <- mtcars %>% 
+  select(-(cyl)) %>%
   as_tibble(rownames = "group") %>% 
   mutate_at(vars(-group), rescale) %>% 
-  head(6) %>% 
-  select(1:10) %>%
-  ggradar()
+  tail(4) %>% 
+  select(1:10) 
 
-mtcars_radar
+ggradar(mtcars_radar)
 
 # 5 ggmosaic
 
@@ -277,3 +282,4 @@ a10 %>%
   PACF(Cost, lag_max = 48) %>%
   autoplot() +
   labs(title="Australian antidiabetic drug sales")
+

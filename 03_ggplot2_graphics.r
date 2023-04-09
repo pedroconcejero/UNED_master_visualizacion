@@ -3,7 +3,7 @@
 
 
 # Recordad SIEMPRE cambiar la ruta (path) a vuestro directorio de trabajo
-setwd("/home/pedro/Escritorio/UNED_2022/uned_master_big_data")
+setwd("/home/pedro/Escritorio/UNED_2023/UNED_master_visualizacion-main")
 
 # Necesario cargar la librería ggplot2
 library(ggplot2)
@@ -132,3 +132,4 @@ p + geom_boxplot() +
 
 library(RColorBrewer)
 display.brewer.all()
+

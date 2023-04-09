@@ -3,7 +3,7 @@
 
 # asegúrate de cambiar tu directorio de trabajo (donde has descargado todo el repo.)
 
-setwd("/home/pedro/Escritorio/UNED_2022/uned_master_big_data")
+setwd("/home/pedro/Escritorio/UNED_2023/UNED_master_visualizacion-main")
 
 # si no tienes instalado el paquete "sp" instálalo
 #install.packages("sp")

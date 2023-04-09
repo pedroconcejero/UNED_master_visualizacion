@@ -106,7 +106,7 @@ m %>% addPolygons(fillColor = ~mypalette(tasa.paro.reducida$intervalos_num),
 m <- leaflet(andalucia) %>%
   setView(long_andalucia, 
           lat_andalucia, 
-          6) %>%
+          7) %>%
   addProviderTiles(providers$Stamen.Toner)
 
 m

@@ -6,9 +6,12 @@
 # https://cran.r-project.org/web/packages/mapSpain/index.html
 # https://ropenspain.github.io/mapSpain/
 
-# install.packages("mapSpain", dependencies = TRUE)
-# install.packages("raster", dependencies = TRUE)
-# install.packages("ggspatial", dependencies = TRUE)
+install.packages("mapSpain", dependencies = TRUE)
+install.packages("raster", dependencies = TRUE)
+install.packages("ggspatial", dependencies = TRUE)
+install.packages("reactable")
+install.packages("tidyterra")
+
 
 library(mapSpain)
 library(tidyverse)
@@ -51,7 +54,6 @@ pie(rep(1, N),
 
 #Si exploramos el dataset:
 
-# install.packages("reactable")
 library(reactable)
 
 reactable(galicia,
@@ -371,7 +373,7 @@ base_pnoa <- esp_getTiles(madrid_munis,
                           zoommin = 1)
 
 ggplot() +
-  layer_spatraster(base_pnoa) +
+#  tidyterra::geom_spatraster_rgb(base_pnoa) +
   geom_sf(
     data = madrid_munis, color = "blue", fill = "blue",
     alpha = 0.25, lwd = 0.5

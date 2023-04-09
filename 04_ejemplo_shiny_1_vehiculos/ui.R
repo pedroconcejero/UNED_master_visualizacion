@@ -9,7 +9,7 @@ library(ggplot2)
 
 # Cargamos los datos desde el repositorio github del módulo 
 
-dataset <- get(load(url("https://github.com/pedroconcejero/ucm_master_big_data/blob/master/datos_4510_vehiculos_2016.rda?raw=true")))
+dataset <- get(load(url("https://github.com/pedroconcejero/UNED_master_visualizacion/raw/main/datos_4510_vehiculos_2016.rda")))
 
 dataset <- dataset[dataset$Tipo != "Eléctrico", ]
 dataset$Tipo <- droplevels(as.factor(dataset$Tipo))
