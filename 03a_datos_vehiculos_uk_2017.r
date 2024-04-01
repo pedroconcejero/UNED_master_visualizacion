@@ -1,7 +1,7 @@
 # Master Big Data UNED 2024
 # Datos vehículos UK 2017
 
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion")
+setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
 
 library(ggplot2)
 

@@ -1,7 +1,7 @@
 # Master Big Data UNED 2024
 # Preparación dataset incidencia COVID proporcional a población por provincia
 
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion")
+setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
 
 library(tidyverse)
 library(stringr)

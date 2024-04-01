@@ -3,7 +3,7 @@
 
 
 # Recordad SIEMPRE cambiar la ruta (path) a vuestro directorio de trabajo
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion")
+setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
 
 # Necesario cargar la librería ggplot2
 library(ggplot2)
