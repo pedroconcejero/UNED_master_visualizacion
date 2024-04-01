@@ -6,7 +6,7 @@ setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
 library(tidyverse)
 library(stringr)
 
-covid <- read_csv("casos_hosp_uci_def_sexo_edad_provres.csv")
+covid <- read_csv(unzip("casos_hosp_uci_def_sexo_edad_provres.zip"))
 str(covid)
 
 prv <- read_csv("provinces_es.csv")
