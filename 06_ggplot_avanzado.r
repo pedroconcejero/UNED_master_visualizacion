@@ -91,7 +91,7 @@ ggplot(data = titanic_wide,
   ggtitle("passengers on the maiden voyage of the Titanic",
           "stratified by demographics and survival")
 
-ggplot(data = titanic_wide,
+alluvial_def <- ggplot(data = titanic_wide,
        aes(axis1 = Class, axis2 = Sex,
            y = Freq)) +
   scale_x_discrete(limits = c("Class", "Sex"), 
@@ -104,6 +104,11 @@ ggplot(data = titanic_wide,
   ggtitle("passengers on the maiden voyage of the Titanic",
           "stratified by demographics and survival")
 
+png(filename = 'alluvial.png',
+    height = 1000,
+    width = 800)
+
+alluvial_def
 
 dev.off()
 
