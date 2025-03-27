@@ -3,10 +3,13 @@
 
 
 # Recordad SIEMPRE cambiar la ruta (path) a vuestro directorio de trabajo
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
+setwd("/home/pedro/Escritorio/UNED_2025/UNED_master_visualizacion-main")
 
 # Necesario cargar la librería ggplot2
 library(ggplot2)
+
+# Más adelante necesitaremos la librería "hexbin" para usar stat_bin_hex()
+install.packages("hexbin")
 
 load("mtcars.rda")
 

@@ -1,12 +1,12 @@
 # ggplot avanzado
 # Extensiones de ggplot
-# Para Curso visualización avanzada master UNED 2024
+# Para Curso visualización avanzada master UNED 2025
 
 # A partir de lista mantenida por RStudio:
 # https://exts.ggplot2.tidyverse.org/gallery/
 
 # Establece tu directorio de trabajo
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
+setwd("/home/pedro/Escritorio/UNED_2025/UNED_master_visualizacion-main")
 
 # 1 gganimate
 

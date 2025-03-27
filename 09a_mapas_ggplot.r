@@ -3,7 +3,7 @@
 
 # asegúrate de cambiar tu directorio de trabajo (donde has descargado todo el repo.)
 
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
+setwd("/home/pedro/Escritorio/UNED_2025/UNED_master_visualizacion-main")
 
 # si no tienes instalado el paquete "sp" instálalo
 #install.packages("sp")

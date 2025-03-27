@@ -1,11 +1,11 @@
 # shinydashboard
-# Para Curso visualización avanzada master UNED 2024
+# Para Curso visualización avanzada master UNED 2025
 
 # A partir de
 # https://rstudio.github.io/shinydashboard/get_started.html
 
 # Establece tu directorio de trabajo
-setwd("/home/pedro/Escritorio/UNED_2024/UNED_master_visualizacion_main")
+setwd("/home/pedro/Escritorio/UNED_2025/UNED_master_visualizacion-main")
 
 # install.packages("shinydashboard")
 

@@ -1,5 +1,5 @@
 # shinydashboard
-# Para Curso visualización avanzada master UNED 2024
+# Para Curso visualización avanzada master UNED 2025
 
 # A partir de
 # https://rstudio.github.io/shinydashboard/get_started.html

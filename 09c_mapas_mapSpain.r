@@ -1,4 +1,4 @@
-# Master Big Data UNED 2022-
+# Master Big Data UNED 2025-
 # Script para probar librería mapSpain
 # Siguiendo la documentación del autor según nos lo explicó en R-madrid
 # https://github.com/dieghernan/rpubs
@@ -260,12 +260,15 @@ ggplot(ccaa) +
     theme_minimal() +
     scale_fill_discrete(type = hcl.colors(4, "Plasma"))
 
-## Provincias (usando versión `*_siane`)
+## Provincias 
+# (a partir info. IGN,  Instituto Geográfico Nacional)
+# Ha cambiado con respecto a años anteriores
+# esp_get_prov()
 
 # Si pasamos una entidad de orden superior (e.g. Andalucia) obtenemos todas las 
 # provincias de esa entidad.
 
-provs <- esp_get_prov_siane(c(
+provs <- esp_get_prov(c(
   "Andalucía", "Ciudad Real",
   "Murcia", "Ceuta", "Melilla"
 ))
@@ -392,8 +395,7 @@ ggplot() +
 
 stations <- esp_get_railway(spatialtype = "point", epsg = 4326)
 
-
-leaflet(stations) %>%
+mapa_estaciones <- leaflet(stations) %>%
   addProviderEspTiles("IGNBase.Gris", group = "Base") %>%
   addProviderEspTiles("MTN", group = "MTN") %>%
   addProviderEspTiles("RedTransporte.Ferroviario", group = "Lineas Ferroviarias") %>%
@@ -408,4 +410,18 @@ leaflet(stations) %>%
     overlayGroups = c("Lineas Ferroviarias", "Estaciones"),
     options = layersControlOptions(collapsed = FALSE)
   )
+
+# Para mostrar toda la península ponemos coordenadas
+# Probamos el zoom (7 muestra sobre todo Madrid, 
+# 6 muestra toda la península)
+# Pero siempre puedes hacer zoom
+
+
+mapa_estaciones <- mapa_estaciones %>%
+  setView(long_espania, 
+          lat_espania, 
+          6) %>%
+  addProviderTiles(providers$CartoDB.Positron)
+
+mapa_estaciones
 
